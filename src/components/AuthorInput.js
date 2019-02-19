@@ -40,6 +40,6 @@ export class AuthorInput extends Component {
       </form>
     );
   }
-};
+};;
 
 export default connect(null, { addAuthor })(AuthorInput);
