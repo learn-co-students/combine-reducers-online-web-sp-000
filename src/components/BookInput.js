@@ -52,4 +52,4 @@ export class BookInput extends Component {
   }
 };
 
-export default connect(null, { addBook })(BookInput);
+export default connect(null,  { addBook })(BookInput);
