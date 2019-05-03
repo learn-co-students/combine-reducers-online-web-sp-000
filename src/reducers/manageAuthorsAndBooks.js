@@ -1,7 +1,13 @@
-export default function bookApp(state = {
-  authors: [],
-  books: []
-}, action) {
+import { combineReducers } from 'react';
+
+const rootReducer = combineReducers({
+  authors: authorsReducer,
+  books: booksReducer
+});
+
+export default rootReducer;
+
+function booksReducer(state = [], action) {
   let idx
   switch (action.type) {
 
@@ -20,7 +26,12 @@ export default function bookApp(state = {
           state.books.slice(idx + 1),
         ]
       };
+    }
+  }
 
+function authorsReducer(state = [], action) {
+  let idx
+  switch (action.type) {
     case "ADD_AUTHOR":
         return {
           ...state,
@@ -36,8 +47,17 @@ export default function bookApp(state = {
           state.authors.slice(idx + 1)
         ]
       };
+    case "ADD_BOOK":
+      let existingAuthor = state.filter(
+        author => author.authorName === action.book.authorName
+      );
+      if (existingAuthor.length > 0) {
+        return state;
+      } else {
+        return [...state, { authorName: action.book.authorName, id: uuid() }];
+      }
 
     default:
       return state;
     }
-};
+  };
