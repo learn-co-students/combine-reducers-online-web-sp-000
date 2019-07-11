@@ -1,4 +1,14 @@
-export default function bookApp(state = {
+import { combineReducers } from 'redux';
+
+
+const rootReducer = combineReducers({
+  authors: authorsReducer,
+  books: booksReducer
+});
+
+export default rootReducer;
+
+function bookApp(state = {
   authors: [],
   books: []
 }, action) {
