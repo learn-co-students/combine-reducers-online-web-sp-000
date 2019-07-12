@@ -2,11 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import manageAuthorsAndBooks from './reducers/manageAuthorsAndBooks';
+import { createStore, combineReducers } from 'redux';
+import booksReducer from './reducers/BooksReducer'
+import authorsReducer from './reducers/AuthorsReducer'
 
 
-const store = createStore(manageAuthorsAndBooks, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+const rootReducer = combineReducers({
+  books: booksReducer,
+  authors: authorsReducer
+})
+
+// passed in the rootReducer that I created in my combineReducers method in manageAuthorsAndBooks.js
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 ReactDOM.render(
   <Provider store={store}>
