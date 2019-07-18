@@ -1,27 +1,8 @@
-export const addAuthor = author => {
-  return {
-    type: 'ADD_AUTHOR',
-    author
-  };
-};
+import { combineReducers } from "redux";
 
-export const removeAuthor = id => {
-  return {
-    type: 'REMOVE_AUTHOR',
-    id
-  };
-};
+const rootReducer = combineReducers({
+  authors: authorsReducer,
+  books: booksReducer
+});
 
-export const addBook = book => {
-  return {
-    type: 'ADD_BOOK',
-    book
-  };
-};
-
-export const removeBook = id => {
-  return {
-    type: 'REMOVE_BOOK',
-    id
-  };
-};
+export default rootReducer;
