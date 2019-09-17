@@ -1,7 +1,9 @@
 export default function bookApp(state = {
   authors: [],
   books: []
-}, action) {
+}, 
+action
+) {
   let idx
   switch (action.type) {
 
