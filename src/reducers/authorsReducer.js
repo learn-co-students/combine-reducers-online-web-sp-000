@@ -1,3 +1,8 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import uuid from 'uuid';
+
+
 function authorsReducer(state = [], action) {
   let idx;
   switch (action.type) {
@@ -22,3 +27,6 @@ function authorsReducer(state = [], action) {
       return state;
   }
 }
+
+
+export default authorsReducer;

@@ -6,7 +6,9 @@ import { createStore } from 'redux';
 import manageAuthorsAndBooks from './reducers/manageAuthorsAndBooks';
 import authorsReducer from './reducers/authorsReducer';
 import booksReducer from './reducers/booksReducer';
- 
+ import { combineReducers } from "redux";
+
+
 const rootReducer = combineReducers({
   books: booksReducer,
   authors: authorsReducer
