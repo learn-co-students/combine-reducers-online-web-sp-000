@@ -1,6 +1,6 @@
 # Redux Combine Reducers
 
-## Objectives
+## Objectives/
 
 1. Write action creators and reducers to modify different pieces of application state
 2. Build **Redux's combineReducers()** function
