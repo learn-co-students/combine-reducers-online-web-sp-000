@@ -20,6 +20,7 @@ export class AuthorInput extends Component {
     event.preventDefault();
     const author = {...this.state, id: uuid() };
     this.props.addAuthor(author);
+    console.log(event.target)
     this.setState({
       authorName: ''
     });
