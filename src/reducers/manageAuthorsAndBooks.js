@@ -22,7 +22,7 @@ export default function bookApp(
 
     case "ADD_AUTHOR":
       return {
-        ...state,
+        ...state, 
         authors: [...state.authors, action.author]
       };
 
