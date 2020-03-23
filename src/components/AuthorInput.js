@@ -5,41 +5,45 @@ import { connect } from 'react-redux';
 
 export class AuthorInput extends Component {
 
-  state = {
-    authorName: '',
-  }
+    state = {
+        authorName: '',
+    }
 
-  handleOnChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    });
-  }
+    handleOnChange = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        });
+    }
 
 
-  handleOnSubmit = event => {
-    event.preventDefault();
-    const author = {...this.state, id: uuid() };
-    this.props.addAuthor(author);
-    this.setState({
-      authorName: ''
-    });
-  }
+    handleOnSubmit = event => {
+        event.preventDefault();
 
-  render() {
-    return(
-      <form onSubmit={(event) => this.handleOnSubmit(event)}>
-        <p>
-          <input
-            type="text"
-            onChange={(event) => this.handleOnChange(event)}
-            name="authorName"
-            value={this.state.authorName}
-            placeholder="author name" />
-        </p>
-        <input type="submit" />
-      </form>
-    );
-  }
+        const author = {...this.state, id: uuid() };
+
+        this.props.addAuthor(author);
+
+        this.setState({
+            authorName: ''
+        });
+    }
+
+    render() {
+        return(
+        <form onSubmit={ (event) => this.handleOnSubmit(event) }>
+            <p><input
+                type="text"
+                name="authorName"
+                placeholder="author name"
+                value={ this.state.authorName }
+                onChange={ (event) => this.handleOnChange(event) }
+                />
+            </p>
+
+            <input type="submit" />
+        </form>
+        );
+    }
 };
 
 export default connect(null, { addAuthor })(AuthorInput);
