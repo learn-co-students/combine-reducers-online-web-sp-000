@@ -18,6 +18,7 @@ Enter `combineReducers()` to save the day! In this lab, we'll see how
 **Redux**'s `combineReducers()` function lets us delegate different pieces of
 state to separate reducer functions.
 
+
 We'll do this in the context of a book application that we'll use to keep track
 of programming books that we've read.
 
@@ -373,4 +374,3 @@ modifications to a _particular_ resource within its own separate file.
 #### Resources
 
 - [Implementing Combine Reducers from Scratch](https://egghead.io/lessons/javascript-redux-implementing-combinereducers-from-scratch)
-
