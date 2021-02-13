@@ -1,4 +1,5 @@
 export const addAuthor = author => {
+  debugger
   return {
     type: 'ADD_AUTHOR',
     author
@@ -13,6 +14,7 @@ export const removeAuthor = id => {
 };
 
 export const addBook = book => {
+  debugger
   return {
     type: 'ADD_BOOK',
     book
