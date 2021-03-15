@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Books extends Component {
+class Authors extends Component {
 
   render() {
 
-    let books = this.props.books.map(book => <li key={book.id}>{book.title} by {book.authorName}</li>);
+    let authors = this.props.authors.map(author => <li key={author.id}>{author.authorName}</li>);
 
     return (
       <div>
         <ul>
-          {books}
+          {authors}
         </ul>
       </div>
     );
@@ -18,7 +18,7 @@ class Books extends Component {
 };
 
 const mapStateToProps = state => {
-  return { books: state.books }
+  return { authors: state.authors }
 }
 
-export default connect(mapStateToProps)(Books);
+export default connect(mapStateToProps)(Authors);
