@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import AuthorInput from './components/AuthorInput';
-import Authors from './components/Authors';
-import BookInput from './components/BookInput';
-import Books from './components/Books';
-
+import React, { Component } from 'react'
+import AuthorInput from './components/AuthorInput'
+import Authors from './components/Authors'
+import BookInput from './components/BookInput'
+import Books from './components/Books'
 
 export class App extends Component {
   render() {
@@ -15,13 +14,13 @@ export class App extends Component {
           <Authors />
         </div>
         <div>
-          <h2>Book</h2>
+          <h2>Books</h2>
           <BookInput />
           <Books />
         </div>
       </div>
-    );
+    )
   }
-};
+}
 
-export default App;
+export default App
