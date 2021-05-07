@@ -1,3 +1,49 @@
+import { combineReducers } from "redux";
+
+//can create another file rootReducer and import authorsReducer and booksReducer
+//through combineReducers Redux produces a reducer which will return a state that has both a key of books and authors with return values of each reducers state  
+const rootReducer = combineReducers({
+  authors: authorsReducer,
+  books: booksReducer
+});
+
+export default rootReducer;
+
+//can create this file separately in ./reducers
+function booksReducer(state = [], action) {
+  let idx;
+  switch (action.type) {
+    case "ADD_BOOK":
+      return [...state, action.book];
+
+      case "REMOVE_BOOK":
+        idx = state.findIndex(book => book.id === action.id)
+        return [...state.slice(0, idx), ...state.slice(idx + 1)];
+
+        default: 
+        return state;
+  }
+}
+
+//can create this file separately in ./reducers
+function authorsReducer(state = [], action) {
+  let idx;
+  switch (action.type) {
+    case "ADD_AUTHOR":
+      return [...state, action.author];
+
+    case "REMOVE_AUTHOR":
+      idx = state.findIndex(author => author.id === action.id)
+        return [...state.slice(0, idx), ...state.slice(idx + 1)];
+
+      default: 
+        return state;
+  }
+}
+
+
+
+
 export default function bookApp(
   //top-level keys 
   state = {
