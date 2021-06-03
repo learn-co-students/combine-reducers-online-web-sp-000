@@ -34,6 +34,9 @@ export default function bookApp(
       };
 
     default:
-      return state;
+    return {
+      ...state,
+      authors: [...state.authors, action.author]
+};
   }
 }
